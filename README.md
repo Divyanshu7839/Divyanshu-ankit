@@ -1,1 +1,68 @@
 # Divyanshu-ankit
+import random
+def intro():
+    print("welcome to the adventure Game!")
+    print("you are in a dark forest. there are two paths in front of you")
+    print("you can go 'left' towards the river or 'right' towards the mountains")
+
+def river_path():
+    print("you choose to go towards the river or 'right' towards the mountain ")
+    print("you arrive at the riverbank. it's calm and peaceful.")
+    print("Do you want to 'swim' across the river or follow the river downstream ")
+
+def mountain_path():
+    print("you choose to go towards the mountains.")
+    print("you start climbing the rocky path.It's sleep and challenging.")
+    print("Do you want to 'climb'further up the mountain or 'rest'in a cave.")
+
+def Swim_decision():
+    if random.choice([True,False]):
+        print("you swim across the river safely and find a hidden treasure on the other side!")
+    else:
+        print("As you swim , a strong current  pulls you under .  you sturggle but manage to reach the shore safely")
+def follow_decision():
+    if random.choice ([True,False]):
+        print("you follow the river downstream and find a small village where you can rest.")
+    else:
+        print("you follow the river for hours but find nothing, You are now tired and hungry.")
+def climb_decision():
+    if random.choice([True,False]):
+        print("You climb further and discover a beautiful view from the top of the mountains!")
+    else:
+        print("As you climb, the rocks become slippery. You lose your footing but manage  to grab a ledge and pull yourself to safety.")
+def rest_decision():
+    if random.choice([True,False]):
+        print("You rest in the cave and wake yp felling refreshed. A mysterious stange offers you food and guidance.")
+    else:
+        print("while resting,  you hear strange noises from deeper within the cave. You decided to leave  before anything finds you.")
+def adventure_game():
+     intro()
+
+     choice1 = input("Do you choose to go 'left'  or 'right' ?").lower()
+     if choice1=="left":
+         river_path()
+         choice2 = input("Do you want to 'swim' or 'follow the river?").lower()
+         if choice2 =="swim":
+             Swim_decision()
+         elif choice2 == "follow":
+             follow_decision()
+         else:
+             print("That's not a valid option. the adventure game ends here.")
+
+     elif choice1 == "right":
+         mountain_path()
+         choice2 = input("Do you want to 'climb' or 'rest' in the cave?").lower()
+         if choice2 == "climb":
+             climb_decision()
+         elif choice2 == "rest":
+             rest_decision()
+         else:
+             print("That's not a valid option. The adventure ends here.")
+
+     else:
+         print("That's not a valid option. The adventure ends here.")
+        
+     print("thanks you for playing the adventure Game!")
+
+        
+adventure_game()
